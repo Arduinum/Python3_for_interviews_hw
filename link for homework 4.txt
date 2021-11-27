@@ -1,1 +1,2 @@
-Заглушка
+ссылка на домашку 4
+https://github.com/Arduinum/Python3_for_interviews_hw/commit/30dc736bf4a4a7c62818f02f7b00e7e603fc9ba5
