@@ -57,6 +57,11 @@ class ProductsInfo(models.Model):
         max_length=255
     )
 
+    tags = models.TextField(
+        verbose_name='тэги',
+        blank=True
+    )
+
     created = models.DateTimeField(
         auto_now_add=True,
         auto_created=True
