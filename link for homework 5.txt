@@ -1,0 +1,4 @@
+Часть 1
+https://github.com/Arduinum/Python3_for_interviews_hw/commit/548dab8d2303af2aece8e1e6a41d832087a956f9
+Часть 2
+https://github.com/Arduinum/Python3_for_interviews_hw/commit/86ee59216d90b683bd3bfac51bf884bc26b93efa
