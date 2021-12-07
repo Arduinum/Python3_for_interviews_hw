@@ -1,0 +1,21 @@
+{% load static %}
+
+
+<ul class="menu">
+    <h5>Категории:</h5>
+    {% if title == 'категория/товары' %}
+        {% for object in all_products %}
+            {% ifchanged object.category %}
+                <li style="list-style-type: none"><a href="{% url 'category_goods_list' object.category.pk %}">
+                    {{ object.category }}</a></li>
+            {% endifchanged %}
+        {% endfor %}
+    {% else %}
+        {% for object in object_list %}
+            {% ifchanged object.category %}
+                <li style="list-style-type: none"><a href="{% url 'category_goods_list' object.category.pk %}">
+                    {{ object.category }}</a></li>
+            {% endifchanged %}
+        {% endfor %}
+    {% endif %}
+</ul>
