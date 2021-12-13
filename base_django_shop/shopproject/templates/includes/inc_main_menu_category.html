@@ -2,6 +2,7 @@
 
 
 <ul class="menu">
+    <a href="{% url 'goods_list' %}">Склад</a>
     <h5>Категории:</h5>
     {% if title == 'категория/товары' %}
         {% for object in all_products %}

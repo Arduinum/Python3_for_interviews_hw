@@ -145,3 +145,4 @@ img/
 jsons/
 management/
 **/*.json
+**/__init__.py

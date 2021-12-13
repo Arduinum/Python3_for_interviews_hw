@@ -1,6 +1,6 @@
 from django.views.generic.list import ListView
 from django.views import View
-from .models import ProductsInfo, ProductCategory
+from .models import ProductsInfo
 
 
 class ProductsInfoView(ListView):
@@ -8,8 +8,14 @@ class ProductsInfoView(ListView):
     template_name = 'goods_list.html'
     context_object_name = 'category'
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ProductsInfoView, self).get_context_data()
+        context['site'] = self.request.site
+
+        return context
+
     def get_queryset(self):
-        items = ProductsInfo.objects.all()
+        items = ProductsInfo.on_site.all()  # фильтруем по сайтам
         return items
 
 
@@ -20,10 +26,10 @@ class ProductCategoryView(ListView, View):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductCategoryView, self).get_context_data()
         context['title'] = 'категория/товары'
-        context['all_products'] = ProductsInfo.objects.all()
+        context['all_products'] = ProductsInfo.on_site.all()
 
         return context
 
     def get_queryset(self):
         category_pk = self.kwargs['pk']
-        return ProductsInfo.objects.filter(category__pk=category_pk)
+        return ProductsInfo.on_site.filter(category__pk=category_pk)

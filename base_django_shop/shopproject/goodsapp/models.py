@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.sites.models import Site
+from django.contrib.sites.managers import CurrentSiteManager
 
 
 class ProductCategory(models.Model):
@@ -6,6 +8,12 @@ class ProductCategory(models.Model):
         verbose_name='название',
         max_length=255,
         unique=True
+    )
+
+    site = models.ForeignKey(
+        Site,
+        on_delete=models.CASCADE,
+        null=True
     )
 
     created = models.DateTimeField(
@@ -55,6 +63,19 @@ class ProductsInfo(models.Model):
     name_provider = models.CharField(
         verbose_name='название поставщика',
         max_length=255
+    )
+
+    site = models.ForeignKey(
+        Site,
+        on_delete=models.CASCADE,
+        null=True
+    )
+
+    objects = models.Manager()
+
+    # будет автоматом фильтровать модели по привязки к сайтам
+    on_site = CurrentSiteManager(
+        'site'
     )
 
     created = models.DateTimeField(

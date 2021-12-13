@@ -7,16 +7,15 @@
 <table class="table table-bordered">
     <tr>
         <th>Категория</th><th>Название</th><th>Цена</th><th>На складе</th><th>Еденицы измерения</th><th>Поставщик</th>
-        <th>Поступление</th>
+        <th>Сайт</th><th>Поступление</th>
     </tr>
     {% for object in object_list %}
         <tr>
             <td>{{ object.category }}</td><td>{{ object.name }}</td><td>{{ object.price }}</td>
             <td>{{ object.quantity }}</td><td>{{ object.measure }}</td><td>{{ object.name_provider }}</td>
-            <td>{{ object.created }}</td>
+            <td>{{ object.site.name }}</td><td>{{ object.created }}</td>
         </tr>
     {% endfor %}
 </table>
 <button class="btn btn-success">Добавить товар</button>
-<button class="btn btn-success">К категориям</button>
 {% endblock %}
