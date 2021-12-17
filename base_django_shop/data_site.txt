@@ -1,0 +1,46 @@
+String http://127.0.0.1:8000/category/products/2/
+
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Склад</title>
+        <link rel="stylesheet" type="text/css" href="/static/goodsapp/css/bootstrap.min.css">
+        <link rel="icon" href="">
+    </head>
+
+    <body>
+        
+
+
+
+<ul class="menu">
+    <a href="/">Склад</a>
+    <h5>Категории:</h5>
+    
+        
+            
+                <li style="list-style-type: none"><a href="/category/products/2/">
+                    Паяльники</a></li>
+            
+        
+    
+</ul>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Название</th><th>Цена</th><th>На складе</th><th>Еденицы измерения</th><th>Поставщик</th><th>Поступление</th>
+    </tr>
+    
+        <tr>
+            <td>Паяльники</td><td>ELEMENT 947-II</td><td>1190.00</td>
+            <td>1190</td><td>шт</td><td>Solomon (Sorny Roong Industrial)</td>
+            <td>Dec. 17, 2021, 8:46 p.m.</td>
+        </tr>
+    
+</table>
+<button class="btn btn-success">Добавить товар</button>
+
+    </body>
+</html>
